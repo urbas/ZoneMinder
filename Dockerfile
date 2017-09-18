@@ -98,6 +98,8 @@ RUN chown -R www-data:www-data /usr/local/share/zoneminder/
 # Adding apache virtual hosts file
 RUN cp misc/apache.conf /etc/apache2/sites-available/000-default.conf
 
+RUN usermod -a -G video www-data
+
 # Expose http port
 EXPOSE 80
 
